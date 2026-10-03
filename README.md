@@ -228,3 +228,9 @@ curl -X POST http://localhost:8000/analyze-org \
 Response shape: `{ org, total_members, analyzed_count, failed_count, ranked_results: [...], failures: [...] }`, where `ranked_results` is sorted by `rating_score` descending.
 
 Without `GITHUB_TOKEN`, only members who've made their org membership public are visible (`/orgs/{org}/public_members`). With `GITHUB_TOKEN` set, all members are visible (`/orgs/{org}/members`).
+
+
+
+
+
+run terminal (source .venv/Scripts/activate && uvicorn $(grep -rl "FastAPI(" --include=*.py app backend 2>/dev/null | head -1 | sed 's/\.py$//; s#/#.#g'):app --reload)
